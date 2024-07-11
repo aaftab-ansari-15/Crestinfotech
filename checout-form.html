@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <title>Checkout Form</title>
+</head>
+
+<body>
+    <div class="container w-60 mx-8 px-5">
+        <div class="header mb-4 text-center">
+            <i class="bi bi-bootstrap-fill" style="color: blueviolet; font-size: 70px"></i>
+            <h4 class="title">Checkout form</h4>
+            <p class="mx-2">
+                Below is an example form built entirelycwith Bootstrap's form
+                controls. Each required form group has a validation state that can be
+                triggered by attempting to submit the form without completing it.
+            </p>
+        </div>
+        <div class="m-0 p-0 mb-5 d-flex justify-content-center align-items-center">
+            <div class="row w-100">
+                <div class="col-8 m-0 p-0">
+                    <h5>Billing address</h5>
+                    <div class="container m-0 p-0">
+                        <form>
+                            <div class="d-flex mb-2">
+                                <div class="flex-fill me-md-3">
+                                    <label class="mb-1" for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" />
+                                </div>
+                                <div class="flex-fill me-md-3">
+                                    <label class="mb-1" for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-2 me-md-3">
+                                <label for="username">Username</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">@</div>
+                                    <input type="text" class="form-control" id="username" placeholder="Username" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-2 me-md-3">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="abc@example.com" />
+                            </div>
+                            <div class="form-group mb-2 me-md-3">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address1" placeholder="1234 Main St" />
+                            </div>
+                            <div class="form-group mb-2 me-md-3">
+                                <label for="address2">Address2</label>
+                                <input type="text" class="form-control" id="address2"
+                                    placeholder="Appartment or suit" />
+                            </div>
+                            <div class="d-flex mb-4">
+                                <div class="flex-grow-1 me-md-3">
+                                    <label for="country">Country</label>
+                                    <select class="form-control" id="country">
+                                        <option selected>Choose...</option>
+                                        <option>USA</option>
+                                        <option>Canada</option>
+                                        <option>UK</option>
+                                        <option>Germany</option>
+                                    </select>
+                                </div>
+                                <div class="flex-grow-0 me-md-3" style="flex-basis: 33.33%;">
+                                    <label for="state">State</label>
+                                    <select class="form-control" id="state">
+                                        <option selected>Choose...</option>
+                                        <option>California</option>
+                                        <option>Texas</option>
+                                        <option>New York</option>
+                                        <option>Florida</option>
+                                    </select>
+                                </div>
+                                <div class="flex-grow-0 me-md-3" style="flex-basis: 25%;">
+                                    <label for="zip">Zip</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="Zip">
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="sameAddForShipAndBill">
+                                <label class="form-check-label" for="sameAddForShipAndBill">
+                                    Shipping address is the same as my billing address.
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="saveInfo">
+                                <label class="form-check-label" for="saveInfo">
+                                    Save this information for next time.
+                                </label>
+                            </div>
+                            <hr class="mb-4">
+                            <div class="form-group mb-3">
+                                <h5>Payment</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard"
+                                        value="creditCard" checked>
+                                    <label class="form-check-label" for="creditCard">
+                                        Credit Card
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="debitCard"
+                                        value="debitCard">
+                                    <label class="form-check-label" for="payPal">
+                                        Debit Card
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="payPal"
+                                        value="payPal">
+                                    <label class="form-check-label" for="bankTransfer">
+                                        PayPal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-fill me-md-3">
+                                    <label class="mb-1" for="cardName">Card Name</label>
+                                    <input type="text" class="form-control" id="cardName" />
+                                    <small class="form-text text-muted small-text">Full name as displayed on the
+                                        card</small>
+                                </div>
+                                <div class="flex-fill me-md-3">
+                                    <label class="mb-1" for="cardNumber">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" />
+                                </div>
+                            </div>
+                            <div class="form-row mb-5">
+                                <div class="d-flex col-md-6 mb-3">
+                                    <div class="flex-fill me-md-3">
+                                        <label class="mb-1" for="expiration">Expiration</label>
+                                        <input type="date" class="form-control" id="expiration">
+                                    </div>
+                                    <div class="flex-fill me-md-3">
+                                        <label class="mb-1" for="cvv">CVV</label>
+                                        <input type="number" class="form-control" id="cvv">
+                                    </div>
+                                </div>
+                            </div>  
+                            <hr class="mb-4">
+                            <div class="d-flex">
+                                <button type="submit" class="flex-fill btn btn-primary me-md-3">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-4 m-0 p-0">
+                    <div class="d-flex mb-2 justify-content-between">
+                        <div class="your-cart"><h5>Your cart</h5></div>
+                        <div class="number-of-items"><h5 class="badge rounded-pill bg-secondary text-white text-center p-2">3</h5></div>
+                    </div>
+                    <div class="product-details mb-3 border border-1">
+                        <div class="products">
+                            <div class="d-flex justify-content-between mx-3">
+                                <div class="product-name">
+                                    <p class="h-6 m-0 p-0">Product name</p>
+                                    <small class="text-muted small-text">Brief description</small>
+                                </div>
+                                <div class="price"><h6 class="text-secondary">$12</h6></div>
+                            </div>
+                        </div>
+                        <hr class="p-0 my-1">
+                        <div class="products">
+                            <div class="d-flex justify-content-between mx-3">
+                                <div class="product-name">
+                                    <p class="h-6 m-0 p-0">Second product</p>
+                                    <small class="text-muted small-text">Brief description</small>
+                                </div>
+                                <div class="price"><h6 class="text-secondary">$8</h6></div>
+                            </div>
+                        </div>
+                        <hr class="p-0 my-1">
+                        <div class="products">
+                            <div class="d-flex justify-content-between mx-3">
+                                <div class="product-name">
+                                    <p class="h-6 m-0 p-0">Third item</p>
+                                    <small class="text-muted small-text">Brief description</small>        
+                                </div>
+                                <div class="price"><h6 class="text-secondary">$5</h6></div>
+                            </div>
+                        </div>
+                        <hr class="p-0 my-1">
+                        <div class="promo-code">
+                            <div class="d-flex justify-content-between mx-3">
+                                <div class="promo-code">
+                                    <p class="h-6 m-0 p-0">Promo code</p>
+                                    <small class="text-success small-text">EXAMPLECODE</small>
+                                </div>
+                                <div class="disccount"><h6 class="text-success">-$5</h6></div>
+                            </div>
+                        </div>
+                        <hr class="p-0 my-1">
+                        <div class="total">
+                            <div class="d-flex justify-content-between mx-3">
+                                <div class="total">
+                                    <p class="h-6 m-0 p-0">Total(USD)</p>
+                                </div>
+                                <div class="price"><h6 class="text-secondary">$20</h6></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border border-1">
+                        <div class="row p-2 mx-2">
+                            <div class="promo-code col-8 p-0 m-0">
+                                <input class="w-100" type="text" id="promoCode" placeholder="Promo code">
+                            </div>
+                            <div class="redeem col-4 p-0 m-0">
+                                <button class="btn btn-secondary text-center m-0 p-0 h-100 w-100" type="submit">Redeem</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+        <div class="footer mb-5 text-center">
+            <div class="">&copy; 2017-2018 Company Name</div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="m-1"><a href="">Privacy</a></div>
+                <div class="m-1"><a href="">Terms</a></div>
+                <div class="m-1"><a href="">Support</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
