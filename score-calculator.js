@@ -1,23 +1,26 @@
+let number = prompt('Enter total number of Input:');
+let n = parseFloat(number);
+
+console.log('hello',n);
+getAllInputs(n);
+
 function getAllInputs(n){
-    const number = n;
-    var htmlContent= `<form>`;
-    for(var i=1; i<=number; i++){
-        htmlContent += `
-            <div class="form-group mb-3">
-                <label class="" for="input${i}">Enter input${i}:</label>
-                <input type="number" class="col-4" id="input${i}" name="input${i}">
-            </div>
-    `;  
-             
-    } 
-    htmlContent += `<button type="button" onclick="totalScoreFunc(${n})" class="col-1 btn border border-dark">click</button>
-        </form>`;
-    document.getElementById('allInputs').innerHTML = htmlContent;
+    const inpArr = [];
+    for (var i=0; i<n; i++){
+        let input = prompt(`Enter a input${i}:`);
+        let inp = parseFloat(input);
+        if (!isNaN(inp)) {
+            inpArr.push(inp);
+        } else {
+            alert("Please enter a valid number.");
+        }
+    }
+    totalScoreFunc(inpArr);
 }
-function totalScoreFunc(n){
+function totalScoreFunc(inpArr){
     var totalScore = 0;
-    for (var i=1; i<=n; i++){
-        const n = document.getElementById(`input${i}`).value;
+    for (n in inpArr){
+        console.log(n);
         if (n==5){
             totalScore += 5;
         }
@@ -29,6 +32,4 @@ function totalScoreFunc(n){
         }
     }
     console.log(totalScore);
-    document.getElementById('answer').innerHTML = 'Total Score: '+totalScore;
-
 }
