@@ -1,25 +1,7 @@
-let number = prompt('Enter total number of Input:');
-let n = parseFloat(number);
-
-console.log('hello',n);
-getAllInputs(n);
-
-function getAllInputs(n){
-    const inpArr = [];
-    for (var i=0; i<n; i++){
-        let input = prompt(`Enter a input${i}:`);
-        let inp = parseFloat(input);
-        if (!isNaN(inp)) {
-            inpArr.push(inp);
-        } else {
-            alert("Please enter a valid number.");
-        }
-    }
-    totalScoreFunc(inpArr);
-}
+totalScoreFunc([0,3,5]);
 function totalScoreFunc(inpArr){
     var totalScore = 0;
-    for (n in inpArr){
+    for (n of inpArr){
         console.log(n);
         if (n==5){
             totalScore += 5;
@@ -31,5 +13,5 @@ function totalScoreFunc(inpArr){
             totalScore += 1;
         }
     }
-    console.log(totalScore);
+    console.log('total score: '+ totalScore);
 }
