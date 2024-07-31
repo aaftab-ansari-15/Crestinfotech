@@ -1,0 +1,7 @@
+{
+  "watch": ["src", "config"],
+  "ext": "js,json",
+  "ignore": ["node_modules"],
+  "delay": "2500",
+  "verbose": true
+}
