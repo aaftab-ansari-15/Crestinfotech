@@ -1,0 +1,6 @@
+React:
+Component: (functional, classes), props, 
+constructor: super(), this.state.Component.
+componentDidMount.
+React-Snippets: rafc, usestateSnippet.
+ 
