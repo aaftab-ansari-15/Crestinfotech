@@ -1,9 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const cors = require("cors");
 const connectToMongo = require("./db");
-const app = express();
-const port = 5000;
-
 // Connect to MongoDB and start the server
 const startServer = async () => {
   try {
@@ -17,6 +14,11 @@ const startServer = async () => {
     process.exit(1); // Exit the process if there is an error
   }
 };
+startServer();
+
+const app = express();
+const port = 5000;
+app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -31,4 +33,3 @@ app.get("/", (req, res) => {
 });
 
 // Start the server
-startServer();
