@@ -1,94 +1,157 @@
 import { useState } from "react";
 import NoteContext from "./NoteContext";
-const url = "http://localhost:5000/";
+// const url = "http://localhost:5000/";
 const NoteState = (props) => {
-  const initialNote = [];
-  const [notes, setNotes] = useState(initialNote);
+  const [notes, setNotes] = useState([]);
   //Get all notes
   const getNotes = async () => {
-    const response = await fetch(`${url}api/notes/getnotes`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWI0ZDU1N2M2YmJlNGY0NmNmNGNjMiIsImlhdCI6MTcyMjUwNDYwNH0.DI_GugRExUm-5mVtaacUfzEYtehii_J5O7YT6dJxDGI",
-      },
-    });
-    const jsonData = await response.json;
-    console.log(jsonData);
-    // setNotes(initialNote.push(jsonData));
+    try {
+      const response = await fetch("http://localhost:5000/api/notes/getnotes", {
+        method: "GET",
+        headers: new Headers({
+          "Content-Type": "application/json",
+          "auth-token":
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWI0ZDU1N2M2YmJlNGY0NmNmNGNjMiIsImlhdCI6MTcyMjUwNDYwNH0.DI_GugRExUm-5mVtaacUfzEYtehii_J5O7YT6dJxDGI",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          `Network response was not ok. Status: ${response.status}`
+        );
+      }
+
+      const data = await response.json(); // Parse the JSON from the response
+      setNotes(data);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
   };
+
   //Add a note
   const addNote = async (title, description, tag) => {
     //logic
-    console.log("adding new note");
-    const note = {
+    const newNote = {
       title: title,
       description: description,
       tag: tag,
     };
-
     //api call
-    // const response = await fetch("http://localhost:5000/api/notes/addnote", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "auth-token":
-    //       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWI0ZDU1N2M2YmJlNGY0NmNmNGNjMiIsImlhdCI6MTcyMjUwNDYwNH0.DI_GugRExUm-5mVtaacUfzEYtehii_J5O7YT6dJxDGI",
-    //   },
-    //   body: JSON.stringify({ note }),
-    // });
+    console.log("newNote: ", newNote);
     try {
-      const response = await fetch("http://localhost:5000/api/notes/addnote", {
+      const request1 = new Request("http://localhost:5000/api/notes/addnote", {
         method: "POST",
-        headers: {
+        headers: new Headers({
           "Content-Type": "application/json",
           "auth-token":
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWI0ZDU1N2M2YmJlNGY0NmNmNGNjMiIsImlhdCI6MTcyMjUwNDYwNH0.DI_GugRExUm-5mVtaacUfzEYtehii_J5O7YT6dJxDGI", // Use environment variable for auth-token
-        },
-        body: JSON.stringify({ note }),
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWI0ZDU1N2M2YmJlNGY0NmNmNGNjMiIsImlhdCI6MTcyMjUwNDYwNH0.DI_GugRExUm-5mVtaacUfzEYtehii_J5O7YT6dJxDGI",
+        }),
+        body: JSON.stringify(newNote),
       });
 
-      // Check if the response is OK (status in the range 200-299)
+      const request2 = request1.clone();
+
+      const response = await fetch(request2);
       if (!response.ok) {
-        // Handle HTTP errors
-        const errorData = await response.json();
-        // const jsonData = await response;
-        // console.log(jsonData);
-        // setNotes(notes.concat(note));
+        const data = await response.json(); // Parse the JSON from the response
+        console.log("data", data); // Do something with the data here
+
         throw new Error(
-          `HTTP error! status: ${response.status}, message: ${errorData.message}`
+          `Network response was not ok. Status: ${response.status}`
         );
       }
-
-      // Parse and return the JSON data from the response
-      const data = await response.json();
-      return data;
+      console.log(response.status);
+      const data = await response.json(); // Parse the JSON from the response
+      console.log("data", data); // Do something with the data here
+      setNotes(notes.concat(data));
+      console.log(notes);
     } catch (error) {
-      // Handle errors, e.g., network issues or JSON parsing errors
-      console.error("Fetch error:", error.message);
-      throw error; // Re-throw the error if needed or handle it appropriately
+      console.error("There was a problem with the fetch operation:", error);
     }
   };
   //Update a note
-  const updateNote = async (id, title, description, tag) => {
-    for (let index = 0; index < notes.length; index++) {
-      const element = notes[index];
-      if (notes._id === id) {
-        element.title = title;
-        element.description = description;
-        element.tag = tag;
+  const updateNote = async (id, formValues) => {
+    //logic
+    console.log("upodate note", id, formValues);
+    const newNote = {
+      title: formValues.title,
+      description: formValues.description,
+      tag: formValues.tag,
+    };
+    //api call
+    try {
+      const request1 = new Request(
+        `http://localhost:5000/api/notes/updatenote/${id}`,
+        {
+          method: "PUT",
+          headers: new Headers({
+            "Content-Type": "application/json",
+            "auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWI0ZDU1N2M2YmJlNGY0NmNmNGNjMiIsImlhdCI6MTcyMjUwNDYwNH0.DI_GugRExUm-5mVtaacUfzEYtehii_J5O7YT6dJxDGI",
+          }),
+          body: JSON.stringify(newNote),
+        }
+      );
+
+      const request2 = request1.clone();
+
+      const response = await fetch(request2);
+      if (!response.ok) {
+        const data = await response.json(); // Parse the JSON from the response
+        console.log("data", data); // Do something with the data here
+
+        throw new Error(
+          `Network response was not ok. Status: ${response.status}`
+        );
       }
+      console.log(response.status);
+      const data = await response.json(); // Parse the JSON from the response
+      console.log("data", data); // Do something with the data here
+      setNotes((prevNotes) =>
+        prevNotes.map((note) => (note._id === id ? { ...note, ...data } : note))
+      );
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
     }
   };
   //Delete anote
   const deleteNote = async (id) => {
+    //logic
     console.log("delete note of id: ", id);
     const newNote = notes.filter((note) => {
       return note._id !== id;
     });
-    setNotes(newNote);
+    //api call
+    try {
+      const request = new Request(
+        `http://localhost:5000/api/notes/deletenote/${id}`,
+        {
+          method: "DELETE",
+          headers: new Headers({
+            "Content-Type": "application/json",
+            "auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWI0ZDU1N2M2YmJlNGY0NmNmNGNjMiIsImlhdCI6MTcyMjUwNDYwNH0.DI_GugRExUm-5mVtaacUfzEYtehii_J5O7YT6dJxDGI",
+          }),
+        }
+      );
+
+      const response = await fetch(request);
+      if (!response.ok) {
+        const data = await response.json(); // Parse the JSON from the response
+        console.log("data", data); // Do something with the data here
+        throw new Error(
+          `Network response was not ok. Status: ${response.status}`
+        );
+      }
+      console.log(response.status);
+      const data = await response.json(); // Parse the JSON from the response
+      console.log("data", data); // Do something with the data here
+      setNotes(newNote);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
   };
+
   return (
     <NoteContext.Provider
       value={{ notes, setNotes, getNotes, addNote, updateNote, deleteNote }}

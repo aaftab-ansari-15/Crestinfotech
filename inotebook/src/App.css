@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.badge-success {
+  font-weight: bolder;
+  color: #ffffff;
+  background-color: green; /* Success background color */
+}

@@ -4,6 +4,9 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NoteState from "./context/NoteState";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root"); // Ensure this matches the root element of your app
 
 function App() {
   return (

@@ -9,7 +9,6 @@ const Notes = () => {
   useEffect(() => {
     getNotes();
   }, []);
-
   return (
     <div className="container my-3">
       <AddNote />
