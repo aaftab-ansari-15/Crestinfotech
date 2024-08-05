@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NoteState from "./context/NoteState";
 import Modal from "react-modal";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 Modal.setAppElement("#root"); // Ensure this matches the root element of your app
 
@@ -18,6 +20,8 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home />}></Route>
               <Route exact path="About" element={<About />}></Route>
+              <Route exact path="Login" element={<Login />}></Route>
+              <Route exact path="Signup" element={<Signup />}></Route>
             </Routes>
           </div>
         </Router>
