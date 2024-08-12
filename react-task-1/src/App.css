@@ -37,18 +37,14 @@
   }
 }
 .input-area {
-  height: 200px;
+  height: 300px;
   border-radius: 2.25rem !important;
 }
 .result-area {
-  border-radius: 2.25rem !important;
+  border-radius: 2.25rem !important;  
 }
 .box {
   background-color: #007bff; /* Bootstrap primary color */
-  color: white;
-  padding: 20px;
-  margin: 10px;
   border-radius: 4px;
-  width: 200px; /* Fixed width for boxes */
   text-align: center; /* Center text inside the box */
 }
