@@ -3,6 +3,7 @@ import React from 'react'; // Import React
 import './App.css';
 
 function App() {
+	const tempVar = 5;
 	return (
 		<div className="App">
 			<header className="App-header">
