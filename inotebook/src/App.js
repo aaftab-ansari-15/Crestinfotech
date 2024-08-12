@@ -7,15 +7,19 @@ import NoteState from "./context/NoteState";
 import Modal from "react-modal";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-
+import Usememohook from "./components/Usememohook";
+import Dropdown from "./components/Dropdown";
 Modal.setAppElement("#root"); // Ensure this matches the root element of your app
-
 function App() {
   return (
     <>
       <NoteState>
         <Router>
           <Navbar />
+          <Dropdown />
+          <Usememohook footer={<h2>yo foot</h2>}>
+            <h1>hi heado</h1>
+          </Usememohook>
           <div className="container">
             <Routes>
               <Route exact path="/" element={<Home />}></Route>
