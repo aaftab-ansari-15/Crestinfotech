@@ -41,6 +41,7 @@
 	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
 	"main": "index.js",
 	"devDependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"@eslint/js": "^9.9.0",
 		"eslint": "^9.9.0",
 		"eslint-config-prettier": "^9.1.0",
