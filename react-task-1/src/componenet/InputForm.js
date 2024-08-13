@@ -7,6 +7,16 @@ const InputForm = ({ inputNumber, handleChange, getCurrentResult }) => (
         <h2 className="my-4">Enter a number to get the result</h2>
         <form>
           <div className="input-group mb-3">
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Enter your Number"
+              aria-label="userNumber"
+              // value={inputNumber}
+              onChange={handleChange}
+              id="userNumber"
+              name="userNumber"
+            />
             <span className="input-group-text">
               <button
                 className="btn btn-light"
@@ -16,16 +26,6 @@ const InputForm = ({ inputNumber, handleChange, getCurrentResult }) => (
                 Enter your Number
               </button>
             </span>
-            <input
-              type="number"
-              className="form-control"
-              placeholder="Number"
-              aria-label="userNumber"
-              value={inputNumber}
-              onChange={handleChange}
-              id="userNumber"
-              name="userNumber"
-            />
           </div>
         </form>
       </div>

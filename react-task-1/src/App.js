@@ -1,42 +1,35 @@
 import "./App.css";
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback } from "react";
 import debounce from "lodash/debounce";
 import InputForm from "./componenet/InputForm";
 import ResultsList from "./componenet/ResultsList";
 const App = () => {
   const [inputNumber, setInputNumber] = useState(0);
   const [userAllInputArr, setUserAllInputArr] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
 
   // Debounced functions
-  const debouncedGetCurrentResult = useRef(
-    debounce((userInput) => {
-      if (
-        userInput <= 0 ||
-        userAllInputArr.some((data) => data.userInput === userInput)
-      )
-        return;
-
-      const result = Array.from({ length: userInput }, (_, i) => {
-        const index = i + 1;
-        if (index % 15 === 0) return "FizzBuzz";
-        if (index % 3 === 0) return "Fizz";
-        if (index % 5 === 0) return "Buzz";
-        return `${index}`;
+  const debouncedGetCurrentResult = useCallback(
+    debounce((e, userInput) => {
+      const checkEntry = userAllInputArr.some((data) => {
+        const dataNumber = parseFloat(data.userInput);
+        if (dataNumber === userInput) {
+          return true;
+        }
+        return false;
       });
-
-      const totalWords = result.filter((item) =>
-        ["Fizz", "Buzz", "FizzBuzz"].includes(item)
-      ).length;
-
-      const newResult = { userInput: `${userInput}`, result, totalWords };
+      if (userInput <= 0 || checkEntry) {
+        setShowAlert(true);
+        return;
+      }
+      setShowAlert(false);
+      const newResult = printCurrentResult(e, userInput);
       setUserAllInputArr((prev) =>
         [...prev, newResult].sort((a, b) => a.userInput - b.userInput)
       );
-
-      console.log(`Entries for user input ${userInput}:`, result);
-      console.log(`Total Words: ${totalWords}`);
-    }, 1000)
-  ).current;
+    }, 1000),
+    [userAllInputArr]
+  );
 
   const debouncedGetAllResult = useCallback(
     debounce(() => {
@@ -44,22 +37,50 @@ const App = () => {
         console.log("No data");
         return;
       }
-
-      let totalWords = 0;
+      console.log("User all input data:", userAllInputArr);
+      let fizzCount = 0;
+      let buzzCount = 0;
+      let fizzBuzzCount = 0;
       userAllInputArr.forEach((data, index) => {
-        console.log(`${index + 1}. Result for user input: ${data.userInput}`);
-        data.result.forEach((res, i) => console.log(`\t${i + 1}. ${res}`));
-        console.log(`\tTotal words in this input: ${data.totalWords}`);
-        totalWords += data.totalWords;
+        fizzCount += data.fizzCount;
+        buzzCount += data.buzzCount;
+        fizzBuzzCount += data.fizzBuzzCount;
       });
-      console.log(`Total words in all inputs: ${totalWords}`);
+      console.log("Total Fizz count: ", fizzCount);
+      console.log("Total Buzz count: ", buzzCount);
+      console.log("Total FizzBuzz count: ", fizzBuzzCount);
     }, 1000),
     [userAllInputArr]
   );
+  const printCurrentResult = (e, userInput) => {
+    e.preventDefault();
+    const result = Array.from({ length: userInput }, (_, i) => {
+      const index = i + 1;
+      if (index % 15 === 0) return "FizzBuzz";
+      if (index % 3 === 0) return "Fizz";
+      if (index % 5 === 0) return "Buzz";
+      return `${index}`;
+    });
 
+    const fizzCount = result.filter((item) => item === "Fizz").length;
+    const buzzCount = result.filter((item) => item === "Buzz").length;
+    const fizzBuzzCount = result.filter((item) => item === "FizzBuzz").length;
+    const newResult = {
+      userInput: `${userInput}`,
+      result,
+      fizzCount,
+      buzzCount,
+      fizzBuzzCount,
+    };
+    console.log(`Entries for user input ${userInput}:`, result);
+    console.log(`Fizz: ${fizzCount}`);
+    console.log(`Buzz: ${buzzCount}`);
+    console.log(`FizzBuzz: ${fizzBuzzCount}`);
+    return newResult;
+  };
   const getCurrentResult = (e) => {
     e.preventDefault();
-    debouncedGetCurrentResult(parseInt(inputNumber, 10));
+    debouncedGetCurrentResult(e, parseInt(inputNumber, 10));
   };
 
   const getAllResult = (e) => {
@@ -74,6 +95,11 @@ const App = () => {
   return (
     <div className="d-flex mt-5 justify-content-center align-items-center">
       <div className="box w-100">
+        {showAlert && (
+          <div className="alert alert-success" role="alert">
+            Please enter valid and different input.
+          </div>
+        )}
         <div className="d-flex justify-content-center align-items-center">
           <InputForm
             inputNumber={inputNumber}
@@ -84,6 +110,7 @@ const App = () => {
         <div className="d-flex justify-content-center align-items-center">
           <ResultsList
             userAllInputArr={userAllInputArr}
+            printCurrentResult={printCurrentResult}
             getAllResult={getAllResult}
           />
         </div>
