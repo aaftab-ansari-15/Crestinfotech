@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import debounce from "lodash/debounce";
 import InputForm from "./componenet/InputForm";
 import ResultsList from "./componenet/ResultsList";
@@ -38,7 +38,7 @@ const App = () => {
     }, 1000)
   ).current;
 
-  const debouncedGetAllResult = useRef(
+  const debouncedGetAllResult = useCallback(
     debounce(() => {
       if (userAllInputArr.length === 0) {
         console.log("No data");
@@ -53,8 +53,9 @@ const App = () => {
         totalWords += data.totalWords;
       });
       console.log(`Total words in all inputs: ${totalWords}`);
-    }, 1000)
-  ).current;
+    }, 1000),
+    [userAllInputArr]
+  );
 
   const getCurrentResult = (e) => {
     e.preventDefault();
