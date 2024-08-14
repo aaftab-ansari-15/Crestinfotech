@@ -1,6 +1,5 @@
 // new way
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-
 const cakeSlice = createSlice({
   name: "cake",
   initialState: {
