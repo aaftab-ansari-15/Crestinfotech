@@ -30,11 +30,13 @@ git checkout <branch-name>
 #### Getting Started
 Using Git Command Line:
 
+```bash
 # Clone the repository
 git clone https://github.com/your-username/your-repository.git
 
 # Navigate into the project directory
 cd your-repository
+```
 
 # Checkout the branch you want to explore
 git checkout <branch-name>
