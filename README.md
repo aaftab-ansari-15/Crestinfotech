@@ -36,10 +36,10 @@ git clone https://github.com/your-username/your-repository.git
 
 # Navigate into the project directory
 cd your-repository
-```
 
 # Checkout the branch you want to explore
 git checkout <branch-name>
 
 # Install dependencies for the project
 npm install
+```
