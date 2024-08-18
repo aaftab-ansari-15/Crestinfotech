@@ -26,8 +26,8 @@ git branch -a
 
 # Checkout a specific branch
 git checkout <branch-name>
-
-###Getting Started
+```
+#### Getting Started
 Using Git Command Line:
 
 # Clone the repository
