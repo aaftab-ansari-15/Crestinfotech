@@ -18,16 +18,7 @@ This repository contains my work from my time at Crestinfo Tech, where I complet
 ## Repository Structure
 The repository is organized into branches that correspond to my weekly learning, practice, tests, and projects. Each branch represents the work I completed during a specific week. Feel free to explore these branches to see my progress and projects.
 
-### Branch Navigation
-To view a specific branch:
-```bash
-# List all branches
-git branch -a
-
-# Checkout a specific branch
-git checkout <branch-name>
-```
-#### Getting Started
+### Getting Started
 Using Git Command Line:
 
 ```bash
