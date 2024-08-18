@@ -33,3 +33,12 @@ cd my-react-app
 # 3. Install Additional Libraries (e.g., React Router, Axios, etc.)
 npm install react-router-dom axios
 ```
+
+##### React-Redux
+```bash
+# 1. Install All Project Dependencies `npm install`
+# 2. Install Redux Logger (for logging Redux actions) `npm install redux-logger`
+# 3. Install React-Redux (for connecting React to Redux) `npm install react-redux`
+# 4. Install React and React-DOM (core libraries for React applications) `npm install react react-dom`
+# 5. Install Redux Toolkit (for efficient Redux development) `npm install @reduxjs/toolkit`
+```
