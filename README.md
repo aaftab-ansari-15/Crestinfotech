@@ -1,7 +1,7 @@
 
 # Overview
 
-This repository contains my work from my time at Crestinfo Tech, where I completed Full Stack training. During this period, I learned and implemented various technologies, including HTML, CSS, JavaScript, React, Next.js, Bootstrap, Node.js, and Mongoose.
+This repository contains my work from my time at Crestinfo Tech, where I completed full-stack training. During this period, I learned and implemented various technologies, including HTML, CSS, JavaScript, React, Next.js, Bootstrap, Node.js, and Mongoose.
 
 ## Languages
 - HTML
