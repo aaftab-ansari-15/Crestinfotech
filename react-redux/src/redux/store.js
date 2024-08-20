@@ -1,5 +1,7 @@
 // new way
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import logger from "redux-logger";
+
 const cakeSlice = createSlice({
   name: "cake",
   initialState: {
@@ -20,6 +22,7 @@ export const { buyCake, buyIceCream } = cakeSlice.actions;
 
 const store = configureStore({
   reducer: cakeSlice.reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export default store;
