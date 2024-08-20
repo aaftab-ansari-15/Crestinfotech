@@ -10,7 +10,7 @@ const cakeSlice = createSlice({
   },
   reducers: {
     buyCake: (state) => {
-      state.numberOfCakes -= 1;
+      state.numberOfCakes -= 2;
     },
     buyIceCream: (state) => {
       state.numberOfIceCreams -= 1;
