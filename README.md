@@ -19,14 +19,8 @@ In this branch, I've implemented 3 things:
 - React
 - Redux
 - Node.js
-
-### npm packages
-
-- eslint
-- prettier
-- eslint-plugin-prettier
-- husky
-- lint-staged
+- Logger
+- Thunk
 
 #### React
 
