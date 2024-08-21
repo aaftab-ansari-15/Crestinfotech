@@ -13,7 +13,7 @@ const cakeSlice = createSlice({
       state.numberOfCakes -= 2;
     },
     buyIceCream: (state) => {
-      state.numberOfIceCreams -= 1;
+      state.numberOfIceCreams -= 3;
     },
   },
 });
@@ -31,7 +31,6 @@ export default store;
 
 // import { configureStore } from "@reduxjs/toolkit";
 // import cakeReducer from "./cake/cakeReducer";
-
 // // Create and export the store
 // const store = configureStore({
 //   // reducer: cakeSlice.reducer,
