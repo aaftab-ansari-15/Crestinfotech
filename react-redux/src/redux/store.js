@@ -5,15 +5,15 @@ import logger from "redux-logger";
 const cakeSlice = createSlice({
   name: "cake",
   initialState: {
-    numberOfCakes: 10,
-    numberOfIceCreams: 20,
+    numberOfCakes: 100,
+    numberOfIceCreams: 200,
   },
   reducers: {
     buyCake: (state) => {
-      state.numberOfCakes -= 2;
+      state.numberOfCakes -= 5;
     },
     buyIceCream: (state) => {
-      state.numberOfIceCreams -= 3;
+      state.numberOfIceCreams -= 10;
     },
   },
 });
