@@ -6,7 +6,7 @@ const cakeSlice = createSlice({
   name: "cake",
   initialState: {
     numberOfCakes: 10,
-    numberOfIceCreams: 10,
+    numberOfIceCreams: 20,
   },
   reducers: {
     buyCake: (state) => {
