@@ -37,5 +37,6 @@ npm install react-router-dom axios
 
 1. Install All Project Dependencies `npm install`
 2. Install Redux Toolkit (for efficient Redux development) `npm install @reduxjs/toolkit`
-3. Install axios (promise-based HTTP client for making HTTP requests) `npm install axios`
-4. import createAsyncThunk from `@reduxjs/toolkit` - (middleware for handling asynchronous logic in Redux)
+3. Install React-Redux (for connecting React to Redux) `npm install react-redux`
+4. Install axios (promise-based HTTP client for making HTTP requests) `npm install axios`
+5. import createAsyncThunk from `@reduxjs/toolkit` - (middleware for handling asynchronous logic in Redux)
