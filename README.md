@@ -1,8 +1,10 @@
 # Overview
 
-In this branch, I've implemented: Redux-toolkit, in this I've implemented Redux JS library in my React application.
-(reference: documentation: https://redux-toolkit.js.org/
-video tutorial: https://www.youtube.com/playlist?list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3)
+In this branch, I've implemented:
+
+1. Redux-toolkit, in this I've implemented Redux JS library in my React application.
+   (reference: documentation: https://redux-toolkit.js.org/
+   video tutorial: https://www.youtube.com/playlist?list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3)
 
 ## Languages
 
