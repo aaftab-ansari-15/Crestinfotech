@@ -1,7 +1,15 @@
 // new way
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import logger from "redux-logger";
+import { createLogger } from "redux-logger";
+// const reduxLogger = require("redux-logger");
 
+const logger = createLogger({
+  level: "info",
+  collapsed: true,
+  duration: true,
+  timestamp: true,
+  predicate: (getState, action) => action.type !== "IGNORE_ACTION_TYPE",
+});
 const cakeSlice = createSlice({
   name: "cake",
   initialState: {
@@ -24,9 +32,7 @@ const store = configureStore({
   reducer: cakeSlice.reducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
-
 export default store;
-
 //old way//////////////////////////////////////////////////////////////////////////////
 
 // import { configureStore } from "@reduxjs/toolkit";
