@@ -31,7 +31,7 @@ const fetchUsers = createAsyncThunk("user/fetchUsers", async () => {
       "https://jsonplaceholder.typicode.com/users"
     );
     // Returning the user IDs
-    return response.data.map((user) => user.id);
+    return response.data;
   } catch (error) {
     // If there's an error, it will be passed to the rejected action in the thunk's lifecycle
     throw Error("Failed to fetch users: " + error.message);
