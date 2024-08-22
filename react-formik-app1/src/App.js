@@ -1,6 +1,6 @@
 import "./App.css";
-import SignUp from "./componenet/SignUp";
-import Signup2 from "./componenet/SignUp2";
+import SignUp from "./component/SignUp";
+import Signup2 from "./component/SignUp2";
 
 function App() {
   return (

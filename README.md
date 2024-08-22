@@ -9,6 +9,8 @@ In this branch, I've implemented:
 2. React-formik-app1: In this I've used and implemented `Formik` a library provides an intuitive solution for building forms in React.
    (reference: documentation: https://www.freecodecamp.org/news/build-react-forms-with-formik-library/, https://formik.org/docs/overview)
 
+3. React-formik-app2-task1: This is the task related to Formik library.
+
 ## Languages
 
 - HTML
@@ -51,5 +53,6 @@ npm install react-router-dom axios
 
 ```bash
 1. Install Formik (library provides an intuitive solution for building forms in React) - `npm install formik --save`
+2. Install Yup (JavaScript schema validation library often used with Formik to handle form validation.) - `npm install yup --save`
 2. import { Formik, Form, Field, ErrorMessage, useFormik, useField } from 'formik';
 ```
