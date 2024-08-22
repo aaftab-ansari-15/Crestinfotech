@@ -2,9 +2,12 @@
 
 In this branch, I've implemented:
 
-1. Redux-toolkit: In this I've used and implemented Redux-toolkit JS library in my React application.
+1. Redux-toolkit: In this I've used and implemented `Redux-toolkit` a JS library in my React application.
    (reference: documentation: https://redux-toolkit.js.org/
    video tutorial: https://www.youtube.com/playlist?list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3)
+
+2. React-formik-app1: In this I've used and implemented `Formik` a library provides an intuitive solution for building forms in React.
+   (reference: documentation: https://www.freecodecamp.org/news/build-react-forms-with-formik-library/, https://formik.org/docs/overview)
 
 ## Languages
 
@@ -19,6 +22,7 @@ In this branch, I've implemented:
 - Redux-Toolkit
 - Thunk
 - axios
+- Formik
 
 #### React
 
@@ -40,3 +44,8 @@ npm install react-router-dom axios
 3. Install React-Redux (for connecting React to Redux) `npm install react-redux`
 4. Install axios (promise-based HTTP client for making HTTP requests) `npm install axios`
 5. import createAsyncThunk from `@reduxjs/toolkit` - (middleware for handling asynchronous logic in Redux)
+
+###### Formik
+
+1. Install Formik (library provides an intuitive solution for building forms in React) - `npm install formik --save`
+2. import { Formik, Form, Field, ErrorMessage, useFormik, useField } from 'formik';
