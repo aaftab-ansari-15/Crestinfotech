@@ -24,7 +24,7 @@ In this branch, I've implemented:
 - axios
 - Formik
 
-#### React
+### React
 
 ```bash
 # 1. Create a New React App
@@ -37,15 +37,19 @@ cd my-react-app
 npm install react-router-dom axios
 ```
 
-##### Redux-Toolkit
+### Redux-Toolkit
 
+```bash
 1. Install All Project Dependencies `npm install`
 2. Install Redux Toolkit (for efficient Redux development) `npm install @reduxjs/toolkit`
 3. Install React-Redux (for connecting React to Redux) `npm install react-redux`
 4. Install axios (promise-based HTTP client for making HTTP requests) `npm install axios`
 5. import createAsyncThunk from `@reduxjs/toolkit` - (middleware for handling asynchronous logic in Redux)
+```
 
-###### Formik
+### Formik
 
+```bash
 1. Install Formik (library provides an intuitive solution for building forms in React) - `npm install formik --save`
 2. import { Formik, Form, Field, ErrorMessage, useFormik, useField } from 'formik';
+```
