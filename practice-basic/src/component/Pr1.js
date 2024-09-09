@@ -5,13 +5,7 @@ export const Pr1 = () => {
   console.log("UseState render");
   return (
     <div>
-      <button
-        onClick={(c) => {
-          setCount(c + 1);
-        }}
-      >
-        count - {count}
-      </button>
+      <button onClick={() => setCount((c) => c + 1)}>count - {count}</button>
       <button
         onClick={() => {
           setCount(0);
