@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this branch, I've implemented React JS commonly used packages:
 
-## Available Scripts
+1. reactstrap
+2. classnames
+3. font-awesome
+4. react-datepicker
+5. react-dropzone
+6. rc-slider
+7. react-multi-carousel
+8. react-select
+9. react-table
+10. react-toastify
+11. redux-thunk
+12. react-js-pagination
+13. react-detect-click-outside
+14. @zumper/react-ladda
+15. react-dock
 
-In the project directory, you can run:
+## Languages
 
-### `npm start`
+- HTML
+- CSS
+- JavaScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Frameworks & Packages/ Libraries
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- Redux
 
-### `npm test`
+#### React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# 1. Create a New React App
+npx create-react-app my-react-app
 
-### `npm run build`
+# 2. Navigate to Your React App Directory
+cd my-react-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 3. Install Additional Libraries (e.g., React Router, Axios, etc.)
+npm install react-router-dom axios
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+1. npm i bootstrap, npm i reactstrap react-dom
+2. npm install classnames
+3. npm install @fortawesom/free-solid-svg-icons
+4. npm install react-datepicker --save
+5. npm install --save react-dropzone
+6. npm install rc-slider
+7. npm install react-multi-carousel --save
+8. npm i --save react-select
+9. npm install @tanstack/react-table
+10. npm install --save react-toastify
+11. npm install @reduxjs/toolkit react-redux
+12. npm install react-js-pagination
+13. npm i react-detect-click-outside, npm install react-router-dom
+14. npm install --save @zumper/react-ladda
+15.
+```
