@@ -1,0 +1,1 @@
+- not use of strict mode in this project.
