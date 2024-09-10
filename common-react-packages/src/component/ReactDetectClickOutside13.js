@@ -8,24 +8,19 @@ const ReactDetectClickOutside13 = () => {
     setIsVisible(false);
   };
   const handleClickButton = () => {
-    console.log("button clicked", isVisible);
     setIsVisible(true);
-    console.log("button clicked", isVisible);
   };
 
   const ref = useDetectClickOutside({ onTriggered: handleClickOutside });
 
   return (
     <div>
-      <button type="button" onClick={handleClickButton}>
+      <button ref={ref} type="button" onClick={handleClickButton}>
         Show Box
       </button>
 
       {isVisible && (
-        <div
-          ref={ref}
-          style={{ padding: "20px", backgroundColor: "lightblue" }}
-        >
+        <div style={{ padding: "20px", backgroundColor: "lightblue" }}>
           Click outside this box to close it.
         </div>
       )}

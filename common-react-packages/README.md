@@ -2,21 +2,21 @@
 
 In this branch, I've implemented React JS commonly used packages:
 
-1. reactstrap
-2. classnames
-3. font-awesome
-4. react-datepicker
-5. react-dropzone
-6. rc-slider
-7. react-multi-carousel
-8. react-select
-9. react-table
-10. react-toastify
-11. redux-thunk
-12. react-js-pagination
-13. react-detect-click-outside
-14. @zumper/react-ladda
-15. react-dock
+1. reactstrap - Stateless React ComponentsStateless React Components, used for bootstrap and styling
+2. classnames - Utility for conditionally combining CSS class names, Helps manage class names dynamically based on conditions.
+3. font-awesome - Provides a library of icons and social logos.
+4. react-datepicker - A date picker component for React, It’s customizable and supports features like date ranges, time selection, and localization.
+5. react-dropzone - Simplifies the process of handling file uploads in a React application, including drag-and-drop functionality, file validation, and file previews.
+6. rc-slider - Allows you to include sliders or range sliders in your application. Useful for selecting numerical values or ranges.
+7. react-multi-carousel - Useful for displaying multiple items in a carousel format, with support for responsive designs, infinite looping, and custom controls.
+8. react-select - Offers a rich set of features for dropdowns, including searchable options, multi-select, async options loading, and custom styling.
+9. react-table - Allows you to create complex tables with features like sorting, filtering, pagination, and more. Highly customizable and efficient for handling large datasets.
+10. react-toastify - Shows non-intrusive notifications to users in a React application. Customizable and supports different types of notifications like success, error, and info.
+11. redux-thunk - Allows action creators to return functions instead of actions. Useful for handling asynchronous operations such as API calls and dispatching actions based on the results.
+12. react-js-pagination - Adds pagination functionality to your UI, allowing users to navigate through large sets of data. Supports various configurations and customization options.
+13. react-detect-click-outside - Useful for implementing behavior like closing dropdowns or modals when the user clicks outside of them. Provides a simple way to handle such interactions.
+14. @zumper/react-ladda - (deprecated, use react-loader-spinner, react-spinners) Adds stylish loading buttons with animated spinners to your UI. Use for indicating that an action is in progress.
+15. react-dock - Allows you to create a docked panel with customizable positioning and appearance. Useful for creating sidebars or floating panels in your application.
 
 ## Languages
 
