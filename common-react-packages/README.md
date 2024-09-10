@@ -59,5 +59,5 @@ npm install react-router-dom axios
 12. npm install react-js-pagination
 13. npm i react-detect-click-outside, npm install react-router-dom
 14. npm install --save @zumper/react-ladda
-15.
+15. npm i -S react-dock
 ```
