@@ -1,12 +1,17 @@
 import "./App.css";
-import ParentCom from "./component/ParentCom";
+import ParentComponent from "./component/refForwarding";
 
 function App() {
   console.log("app");
+
   return (
     <div className="App">
       <h4>App</h4>
-      <ParentCom />
+      {/* <ParentCom /> */}
+      {/* <CustomParentComToDetectClickOutside /> */}
+      {/* <StateImmutability /> */}
+      {/* <TodoListWithButton /> */}
+      <ParentComponent />
     </div>
   );
 }
