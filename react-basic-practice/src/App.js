@@ -1,5 +1,5 @@
 import "./App.css";
-import ParentComponent from "./component/refForwarding";
+import Parent from "./component/asd";
 
 function App() {
   console.log("app");
@@ -11,7 +11,9 @@ function App() {
       {/* <CustomParentComToDetectClickOutside /> */}
       {/* <StateImmutability /> */}
       {/* <TodoListWithButton /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
+      {/* <ForwardRef2 /> */}
+      <Parent />
     </div>
   );
 }
