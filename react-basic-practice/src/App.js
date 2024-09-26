@@ -1,5 +1,5 @@
 import "./App.css";
-import Parent from "./component/asd";
+import DropdownSelectExample from "./component/dropdown";
 
 function App() {
   console.log("app");
@@ -13,7 +13,8 @@ function App() {
       {/* <TodoListWithButton /> */}
       {/* <ParentComponent /> */}
       {/* <ForwardRef2 /> */}
-      <Parent />
+      {/* <Parent /> */}
+      <DropdownSelectExample />
     </div>
   );
 }
